@@ -1,13 +1,12 @@
-Sure! Here is a markdown file with instructions on how to run your project:
-
-```markdown
 # TD3 Robot Navigation Project
 
 This guide provides instructions on how to build and run the TD3 Robot Navigation project using ROS2.
 
 ## Project Structure
 
-```text
+```
+text
+
 TD3
 ├── __pycache__
 │   ├── replay_buffer.cpython-38.pyc
@@ -93,7 +92,6 @@ python3 src/test_velodyne_td3.py
 
 ### Additional Notes
 
-- Ensure all dependencies are correctly listed in your `package.xml` and `CMakeLists.txt` files.
 - Make sure to source the appropriate setup files to include your ROS2 environment variables:
 
   ```bash
@@ -103,7 +101,3 @@ python3 src/test_velodyne_td3.py
 
 - Verify that your ROS2 and Gazebo versions are compatible.
 
-By following these steps, you should be able to build and run your TD3 Robot Navigation project with ROS2 without issues.
-```
-
-Save this content to a file named `README.md` in the root of your project directory. This will guide you and others through the process of setting up and running the project.
