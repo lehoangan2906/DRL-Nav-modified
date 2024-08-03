@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>td3</name>
+  <version>0.0.0</version>
+  <description>TD3 ROS2 package</description>
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+</package>
