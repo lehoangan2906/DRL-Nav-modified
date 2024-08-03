@@ -1,37 +1,39 @@
-# TD3 Robot Navigation Project
+# ROS2 DRL Robot Navigation Project
 
-This guide provides instructions on how to build and run the TD3 Robot Navigation project using ROS2.
+This document provides instructions to set up and run the ROS2-based DRL Robot Navigation project.
 
 ## Project Structure
 
 ```
 text
-
 TD3
 ├── __pycache__
-│   ├── replay_buffer.cpython-38.pyc
-│   ├── replay_buffer2.cpython-38.pyc
-│   └── velodyne_env.cpython-38.pyc
+│   ├── replay_buffer.cpython-38.pyc
+│   ├── replay_buffer2.cpython-38.pyc
+│   └── velodyne_env.cpython-38.pyc
 ├── assets
-│   ├── multi_robot_scenario.launch
-│   └── multi_robot_scenario.launch.py
+│   ├── multi_robot_scenario.launch
+│   └── multi_robot_scenario.launch.py
 ├── pytorch_models
-│   ├── TD3_velodyne_actor.pth
-│   ├── TD3_velodyne_critic.pth
-│   └── description
+│   ├── TD3_velodyne_actor.pth
+│   ├── TD3_velodyne_critic.pth
+│   └── description
 ├── results
-│   ├── TD3_velodyne.npy
-│   └── description
+│   ├── TD3_velodyne.npy
+│   └── description
 ├── runs
-│   ├── Jul10_10-26-18_vtx
-│   |...
-│   ├── May24_11-27-38_vtx
-│   └── description
+│   ├── Jul10_10-26-18_vtx
+│   ├── Jul10_10-28-12_vtx
+|   |...
+│   ├── Jul11_09-52-09_vtx
+│   ├── Jul11_09-57-52_vtx
+│   ├── May24_11-27-38_vtx
+│   └── description
 ├── small_house
-│   ├── maps
-│   ├── models
-│   ├── photos
-│   └── small_house.world
+│   ├── maps
+│   ├── models
+│   ├── photos
+│   └── small_house.world
 └── src
     ├── CMakeLists.txt
     ├── package.xml
@@ -41,63 +43,76 @@ TD3
     └── velodyne_env.py
 ```
 
-## Prerequisites
-
-- ROS2 Foxy (or compatible version)
-- colcon (build tool for ROS2)
-- Gazebo (compatible version with ROS2 Foxy)
-- Python3
-- PyTorch
-
 ## Setup Instructions
 
-### 1. Clone the Project Repository
+### Step 1: Clone the Project Repository
 
 ```bash
-git clone <repository_url>
+git clone <repository-url>
 cd TD3
 ```
 
-### 2. Build the Workspace
+### Step 2: Clone TurtleBot3 and Dependencies
 
-Navigate to the root of your workspace (where the `src` directory is located) and build the workspace using `colcon`:
+Navigate to your `src` folder:
 
 ```bash
+cd src
+```
+
+Clone the TurtleBot3 repositories:
+
+```bash
+git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
+git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+```
+
+### Step 3: Install Dependencies
+
+Make sure you have all the necessary dependencies installed:
+
+```bash
+sudo apt update
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+### Step 4: Build Your Workspace
+
+Navigate back to the root of your workspace and build it using colcon:
+
+```bash
+cd ..
 colcon build
 ```
 
-### 3. Source the Setup Script
+### Step 5: Source the Setup Script
 
-After the build completes, source the setup script to overlay this workspace on your environment:
+Source the setup script to overlay this workspace on top of your environment:
 
 ```bash
 source install/setup.bash
 ```
 
-### 4. Run the Launch File
+## Running the Project
 
-To launch the Gazebo environment, use the following command:
+### Step 1: Launch the Simulation
+
+In one terminal, navigate to the root of your workspace and launch the simulation environment:
 
 ```bash
-ros2 launch TD3 multi_robot_scenario.launch.py
+source install/setup.bash
+ros2 launch <your-package-name> multi_robot_scenario.launch.py
 ```
 
-### 5. Run the Test Script
+### Step 2: Run the DRL Test Script
 
-To run the test script for the deep reinforcement learning model, use the following command:
+In another terminal, navigate to the root of your workspace, source the setup script, and run the test script:
 
 ```bash
+source install/setup.bash
 python3 src/test_velodyne_td3.py
 ```
 
-### Additional Notes
-
-- Make sure to source the appropriate setup files to include your ROS2 environment variables:
-
-  ```bash
-  source /opt/ros/foxy/setup.bash
-  source install/setup.bash
-  ```
-
-- Verify that your ROS2 and Gazebo versions are compatible.
-
+This will start the DRL testing process using the TurtleBot3 in the Gazebo simulation environment.
