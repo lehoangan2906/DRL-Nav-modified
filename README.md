@@ -7,7 +7,7 @@ This guide provides instructions on how to build and run the TD3 Robot Navigatio
 
 ## Project Structure
 
-```
+```text
 TD3
 ├── __pycache__
 │   ├── replay_buffer.cpython-38.pyc
@@ -25,37 +25,7 @@ TD3
 │   └── description
 ├── runs
 │   ├── Jul10_10-26-18_vtx
-│   ├── Jul10_10-28-12_vtx
-│   ├── Jul10_10-28-50_vtx
-│   ├── Jul10_10-30-39_vtx
-│   ├── Jul10_10-38-08_vtx
-│   ├── Jul10_10-40-38_vtx
-│   ├── Jul10_10-48-06_vtx
-│   ├── Jul10_11-05-07_vtx
-│   ├── Jul10_11-06-27_vtx
-│   ├── Jul10_11-07-50_vtx
-│   ├── Jul10_11-09-47_vtx
-│   ├── Jul10_11-10-39_vtx
-│   ├── Jul11_08-54-00_vtx
-│   ├── Jul11_08-55-01_vtx
-│   ├── Jul11_08-56-13_vtx
-│   ├── Jul11_08-58-04_vtx
-│   ├── Jul11_08-59-25_vtx
-│   ├── Jul11_09-00-51_vtx
-│   ├── Jul11_09-01-30_vtx
-│   ├── Jul11_09-02-55_vtx
-│   ├── Jul11_09-03-51_vtx
-│   ├── Jul11_09-08-26_vtx
-│   ├── Jul11_09-13-07_vtx
-│   ├── Jul11_09-16-47_vtx
-│   ├── Jul11_09-38-29_vtx
-│   ├── Jul11_09-39-25_vtx
-│   ├── Jul11_09-40-07_vtx
-│   ├── Jul11_09-44-26_vtx
-│   ├── Jul11_09-47-24_vtx
-│   ├── Jul11_09-49-17_vtx
-│   ├── Jul11_09-52-09_vtx
-│   ├── Jul11_09-57-52_vtx
+│   |...
 │   ├── May24_11-27-38_vtx
 │   └── description
 ├── small_house
