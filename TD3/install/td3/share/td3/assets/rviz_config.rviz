@@ -1,0 +1,59 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+  - Class: rviz/Views
+    Name: Views
+
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.7
+      Class: rviz/Grid
+      Color: 160; 160; 160
+      Enabled: true
+      Line Style: Lines
+      Name: Grid
+      Plane Cell Count: 100
+      Plane: XY
+      Scale: 1
+      Value: 0.100000001
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Enabled: true
+      Name: Robot Model
+      Robot Description: robot_description
+    - Alpha: 1
+      Class: rviz/LaserScan
+      Enabled: true
+      Name: LaserScan
+      Queue Size: 10
+      Style: Points
+      Topic: /scan
+      Value: 0.100000001
+    - Alpha: 1
+      Class: rviz/TF
+      Enabled: true
+      Frame Rate: 30
+      Name: TF
+      Show Axes: true
+  Enabled: true
+  Global Options:
+    Fixed Frame: map
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+    - Class: rviz/SetGoal
+  Value: true
+  Views:
+    - Class: rviz/TopDownOrtho
+      Enabled: true
+      Name: TopDownOrtho
+      Near Clip Distance: 0.01
+      Scale: 10
+      Target Frame: map
+
